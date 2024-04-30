@@ -10,10 +10,6 @@ const Hero = () => {
       <h1>
         <span> Aaron Armstrong,</span> a Front-End Developer based in London.
       </h1>
-      <p>
-        I am a frontend developer from London, UK. I am a recent bootcamp
-        graduate.
-      </p>
       <div className="hero-action">
         <div className="hero-connect">
           <AnchorLink className="anchor-link" offset={50} href="#contact">
