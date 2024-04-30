@@ -9,6 +9,7 @@
 
 .about-title {
     position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .about-title h1 {
@@ -16,11 +17,14 @@
     font-size: 80px;
     font-weight: 600;
     position: relative;
-    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent text wrapping */
     overflow-y: hidden; /* Hide vertical scrollbar */
-    white-space: nowrap; /* Prevent text from wrapping */
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+.about-title h1 span {
+    color: #F59CC8;
 }
 
 .about-title h1::-webkit-scrollbar {
@@ -50,14 +54,16 @@
 .about-skills {
     display: flex;
     flex-wrap: wrap; /* Allow skills to wrap to next line */
+    justify-content: center; /* Center items horizontally */
     gap: 20px; /* Adjust gap between skills */
 }
 
 .about-skill {
-    flex: 1 1 calc(50% - 20px); /* Set each skill to take half the width with some gap */
+    flex: 1 1 calc(25% - 20px); /* Set each skill to take one-fourth of the width with some gap */
     display: flex;
     gap: 50px;
     align-items: center;
+    justify-content: center; /* Center skill content horizontally */
     transition: 0.3s;
 }
 
@@ -69,7 +75,7 @@
 }
 
 .about-skill p:hover {
-    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background: linear-gradient(264deg, #4f51dd -5.09%, #f59cc8 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -93,7 +99,7 @@
 .about-achievement h1 {
     font-size: 60px;
     font-weight: 700;
-    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background: linear-gradient(264deg, #B415FF -5.09%, #f59cc8 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

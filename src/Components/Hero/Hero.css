@@ -6,7 +6,6 @@
 }
 
 .hero img {
-    margin-top: 100px;
     max-width: 350px;
 }
 
@@ -18,7 +17,7 @@
 }
 
 .hero h1 span {
-    background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%);
+    background: linear-gradient(270deg, #F59CC8 30%, #B415FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -37,12 +36,23 @@
     gap: 25px;
     font-size: 500;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
+
+.link-buttons {
+    display: none;
+}
+
+.link-button:hover {
+scale: 1.1;
+transition: 0.3s;
+cursor: pointer;
+  }
 
 .hero-connect {
     padding: 25px 45px;
     border-radius: 50px;
-    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 100%);
+    background: linear-gradient(264deg, #B415FF -5.09%, #f59cc8 100%);
     cursor: pointer;
 }
 
@@ -51,6 +61,12 @@
     border-radius: 50px;
     border: 2px solid #FFF;
     cursor: pointer;
+}
+
+.hero-resume a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #FFF;    
 }
 
 .hero-connect:hover {
@@ -91,4 +107,20 @@
         padding: 20px 50px;
         border-radius: 40px;
     }
+    .link-button {
+        display: none
+    }
+    .link-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+    }
+    .link-buttons a img {
+        margin-top: 10px;
+        margin-bottom: 100px;
+        width: 75px; /* Adjust the width to your preference */
+        height: 75px; /* Adjust the height to your preference */
+      }
     };

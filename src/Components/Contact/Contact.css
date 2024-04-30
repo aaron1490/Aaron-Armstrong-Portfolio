@@ -9,6 +9,11 @@
 
 .contact-title {
     position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.contact-title h1 span {
+    color: #F59cc8;
 }
 
 .contact-title h1 {
@@ -16,9 +21,8 @@
     font-size: 80px;
     font-weight: 600;
     position: relative;
-    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent text wrapping */
     overflow-y: hidden; /* Hide vertical scrollbar */
-    white-space: nowrap; /* Prevent text from wrapping */
     scrollbar-width: none; /* Hide scrollbar for Firefox */
     -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }
@@ -41,7 +45,7 @@
 .contact-left h1 {
     font-size: 80px;
     font-weight: 700;
-    background: linear-gradient(270deg, #DF8908 80%, #B415FF 100%);
+    background: linear-gradient(264deg, #4f51dd 40%, #B415FF 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -67,6 +71,26 @@
     align-items: center;
     gap: 20px
 }
+
+.social-link {
+    display: flex;
+    flex-direction: row; /* Change from column to row */
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    color: #D8D8D8;
+    font-size: 22px;
+}
+
+.linkedin:hover {
+   scale: 1.15;
+   transition: 0.3s;
+}
+
+.github:hover {
+    scale: 1.15;
+    transition: 0.3s;
+ }
 
 .contact-right {
     display: flex;
@@ -108,7 +132,7 @@
     border: none;
     color: white;
     border-radius: 50px;
-    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 100%);
+    background: linear-gradient(264deg, #4f51dd -5.09%, #B415FF 100%);
     padding: 20px 60px;
     font-size: 22px;
     margin-bottom: 50px;
