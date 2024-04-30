@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./About.css";
-import theme_pattern from "../../assets/theme_pattern.svg";
 import profile_img from "../../assets/aaron.png";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useMotionValue,
-  useVelocity,
-  useAnimationFrame
-} from "framer-motion";
 
 const About = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div id="about" className="about">
-      <div className="about-title">
-        <h1>About Me</h1>
-        <img src={theme_pattern} alt="" />
+      <div className="about-title" style={{ transform: `translateX(-${scrollY}px)` }}>
+        <h1>About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me About Me</h1>
       </div>
       <div className="about-sections">
         <div className="about-left">
@@ -26,16 +29,14 @@ const About = () => {
         <div className="about-right">
           <div className="about-para">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum
-              minima illo eaque, et, harum totam beatae consectetur fugiat nemo
-              doloremque ut sunt itaque nihil. Sint, explicabo reiciendis.
-              Impedit, inventore?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum minima illo eaque, et, harum totam
+              beatae consectetur fugiat nemo doloremque ut sunt itaque nihil. Sint, explicabo reiciendis. Impedit,
+              inventore?
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea
-              dolorum repellendus, esse debitis ducimus voluptatum atque quo
-              consequuntur, nulla eum accusamus incidunt. Nostrum nihil placeat
-              dolores accusantium iusto perspiciatis quia?
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea dolorum repellendus, esse debitis ducimus
+              voluptatum atque quo consequuntur, nulla eum accusamus incidunt. Nostrum nihil placeat dolores accusantium
+              iusto perspiciatis quia?
             </p>
           </div>
           <div className="about-skills">

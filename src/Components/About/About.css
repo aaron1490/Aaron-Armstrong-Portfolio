@@ -15,14 +15,18 @@
     padding: 0px 30px;
     font-size: 80px;
     font-weight: 600;
+    position: relative;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    white-space: nowrap; /* Prevent text from wrapping */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }
 
-.about-title img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+.about-title h1::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers (e.g., Chrome, Safari) */
 }
+
 
 .about-sections {
     display: flex;
@@ -124,10 +128,8 @@
     .about-title h1 {
         font-size: 50px;
         padding: 0;
-    }
-    .about-title img {
-        width: 130px;
-        right: -20px;
+        position: relative;
+        overflow-x: scroll; /* or overflow-x: auto; */
     }
     .about-sections {
         flex-direction: column;

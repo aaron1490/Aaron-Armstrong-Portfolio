@@ -1,15 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import './Projects.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
 import mywork_data from '../../assets/mywork_data.js'
 import arrow_icon from '../../assets/arrow_icon.svg'
 
 const Projects = () => {
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div id='projects' className='projects'>
-      <div className="project-title">
-        <h1>My latest work</h1>
-        <img src={theme_pattern} alt="" />
+      <div className="project-title" style={{ transform: `translateX(-${scrollY}px)` }}>
+        <h1>My Latest Work My Latest Work My Latest Work My Latest Work My Latest Work My Latest Work My Latest Work My Latest Work My Latest Work My Latest Work My Latest Work My Latest Work</h1>
       </div>
       <div className="project-container">
       {mywork_data.map((work,index) => {

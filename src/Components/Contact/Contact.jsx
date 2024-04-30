@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Contact.css";
-import theme_pattern from "../../assets/theme_pattern.svg";
 import mail_icon from "../../assets/mail_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 import phone_icon from "../../assets/call_icon.svg";
@@ -28,19 +27,31 @@ const Contact = () => {
       alert(res.message)
     }
   };
+  
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div id="contact" className="contact">
-      <div className="contact-title">
-        <h1>Get in touch</h1>
-        <img src={theme_pattern} alt="" />
+      <div className="contact-title" style={{ transform: `translateX(-${scrollY}px)` }}>
+        <h1>Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch Get In Touch</h1>
       </div>
       <div className="contact-section">
         <div className="contact-left">
           <h1>Let's talk.</h1>
           <p>
-            I'm currently available to take on new project, so feel free to send
-            me a message.
+            I'm currently available to take on new projects, why not drop me a message?
           </p>
           <div className="contact-details">
             <div className="contact-detail">
