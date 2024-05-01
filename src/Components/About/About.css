@@ -12,6 +12,10 @@
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+.about-title h1 span {
+    color: #F59CC8;
+}
+
 .about-title h1 {
     padding: 0px 30px;
     font-size: 80px;
@@ -23,14 +27,9 @@
     -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }
 
-.about-title h1 span {
-    color: #F59CC8;
-}
-
 .about-title h1::-webkit-scrollbar {
     display: none; /* Hide scrollbar for WebKit browsers (e.g., Chrome, Safari) */
 }
-
 
 .about-sections {
     display: flex;
